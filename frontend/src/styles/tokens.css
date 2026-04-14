@@ -1,0 +1,171 @@
+/*
+ * Design tokens
+ *
+ * 分兩層：
+ *   1. :root —— 全主題共用的尺度（spacing / radius / font-size / shadow / z-index / motion）
+ *   2. .beginner / .pro / .elderly —— 各主題語意色票，Phase 3 會被既有 CSS 逐檔換入 var(--...)
+ *
+ * 命名：--<類別>-<角色>-<強度?>
+ *   色彩角色：bg / surface / surface-alt / text / text-muted / border / primary / up / down / warn / danger / info
+ *
+ * 斷點無法放進 CSS variable（media query 不支援 var()），僅以註解為對照表：
+ *   --bp-sm: 480px | --bp-md: 768px | --bp-lg: 1024px | --bp-xl: 1280px
+ */
+
+:root {
+  /* spacing scale (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* font sizes */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+  --fs-3xl: 2.25rem;
+
+  /* line heights */
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* shadows */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 2px 4px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-3: 0 4px 8px rgba(0, 0, 0, 0.08), 0 12px 24px rgba(0, 0, 0, 0.10);
+
+  /* z-index layers */
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-toast: 2000;
+
+  /* motion */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 320ms ease;
+
+  /* focus ring (Phase 3 will apply via :focus-visible) */
+  --focus-ring: 0 0 0 3px rgba(91, 141, 239, 0.4);
+}
+
+/*
+ * 股票小白：淺色、友善、柔和藍
+ */
+.beginner {
+  --color-bg: #fafbfe;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7fafc;
+  --color-text: #2d3748;
+  --color-text-muted: #718096;
+  --color-text-subtle: #a0aec0;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e0;
+  --color-border-subtle: #edf2f7;
+
+  --color-primary: #5b8def;
+  --color-primary-hover: #4a7cd8;
+  --color-primary-contrast: #ffffff;
+
+  --color-up: #e05555;
+  --color-down: #38a169;
+
+  --color-warn-bg: #fffcf0;
+  --color-warn-border: #fbd38d;
+  --color-warn-text: #744210;
+  --color-warn-accent: #f0a020;
+
+  --color-danger-bg: #fff5f5;
+  --color-danger-border: #fed7d7;
+  --color-danger-accent: #fc8181;
+  --color-danger-text: #c53030;
+  --color-danger-text-strong: #9b2c2c;
+}
+
+/*
+ * 資深操作師：深色、終端機風、資訊密集
+ */
+.pro {
+  --color-bg: #14161a;
+  --color-surface: #1a1d24;
+  --color-surface-alt: #0d0f12;
+  --color-surface-raised: #1e2028;
+  --color-text: #e0e4ec;
+  --color-text-muted: #8a8f98;
+  --color-text-subtle: #6a6f7a;
+  --color-border: #2a2d35;
+  --color-border-strong: #3a3d45;
+  --color-border-subtle: #222530;
+
+  --color-primary: #4dabf7;
+  --color-primary-hover: #74c0fc;
+  --color-primary-contrast: #0d0f12;
+
+  --color-up: #ff4757;
+  --color-up-soft: #ff6b6b;
+  --color-down: #2ed573;
+
+  --color-warn-bg: transparent;
+  --color-warn-border: #6b5200;
+  --color-warn-accent: #ffa500;
+
+  --color-info-border: #1a3a5c;
+
+  --color-danger-border: #5c1a1a;
+  --color-danger-text: #ff6b6b;
+}
+
+/*
+ * 樂齡版：大字、高對比、暖色
+ */
+.elderly {
+  --color-bg: #fffdf7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0f7ff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-text-subtle: #888888;
+  --color-text-disabled: #aaaaaa;
+  --color-border: #e0e0e0;
+
+  --color-primary: #1a1a1a;
+  --color-primary-contrast: #ffffff;
+
+  --color-up: #d0021b;
+  --color-down: #00a854;
+
+  --color-warn-bg: #fff8e1;
+  --color-warn-border: #ffc107;
+  --color-warn-text: #7a5700;
+
+  --color-info-bg: #f0f7ff;
+  --color-info-border: #b3d4fc;
+
+  --color-danger-bg: #fff0f0;
+  --color-danger-border: #ffaaaa;
+  --color-danger-text: #cc0000;
+}
