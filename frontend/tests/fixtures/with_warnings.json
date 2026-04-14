@@ -1,0 +1,65 @@
+{
+  "stock": {
+    "code": "9903",
+    "name": "測試股票C"
+  },
+  "data": [
+    {
+      "date": "2026-03-02",
+      "open": 99,
+      "high": 101,
+      "low": 98,
+      "close": 100,
+      "volume": 500000,
+      "ma5": null,
+      "ma20": null
+    },
+    {
+      "date": "2026-03-03",
+      "open": 100,
+      "high": 103,
+      "low": 99,
+      "close": 102,
+      "volume": 500000,
+      "ma5": null,
+      "ma20": null
+    },
+    {
+      "date": "2026-03-04",
+      "open": 102,
+      "high": 105,
+      "low": 101,
+      "close": 104,
+      "volume": 500000,
+      "ma5": null,
+      "ma20": null
+    },
+    {
+      "date": "2026-03-05",
+      "open": 104,
+      "high": 105,
+      "low": 100,
+      "close": 101,
+      "volume": 500000,
+      "ma5": null,
+      "ma20": null
+    },
+    {
+      "date": "2026-03-06",
+      "open": 101,
+      "high": 104,
+      "low": 100,
+      "close": 103,
+      "volume": 500000,
+      "ma5": 102.0,
+      "ma20": null
+    }
+  ],
+  "analysis": null,
+  "warnings": [
+    "資料僅 5 個交易日，不足 30 日",
+    "資料不足 20 筆，無法計算 MA20",
+    "依據不足，無法產生分析"
+  ],
+  "extra": null
+}

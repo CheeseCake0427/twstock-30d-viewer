@@ -1,0 +1,280 @@
+/* 股票小白主題：友善、清爽、善用空間、響應式 */
+.beginner {
+  width: 100%;
+  padding: 2rem 2rem;
+  background: #fafbfe;
+  flex: 1;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Noto Sans TC", sans-serif;
+}
+
+.beginner-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.beginner-header h1 {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin: 0 0 0.3rem 0;
+}
+
+.beginner-header p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+/* 空狀態引導 */
+.beginner-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.beginner-empty h2 {
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.beginner-empty p {
+  color: #718096;
+  margin: 0.3rem 0;
+}
+
+.beginner-hint {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-top: 0.8rem;
+}
+
+/* ======= 雙欄佈局 ======= */
+.beginner-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .beginner-layout {
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .beginner-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 左欄 */
+.beginner-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* MA5/MA20 兩張卡片並排 */
+.beginner-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+/* 右欄 */
+.beginner-main {
+  min-width: 0; /* 防止 grid child overflow */
+}
+
+/* ======= 卡片 ======= */
+.beginner-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #edf2f7;
+}
+
+.beginner-card.main-card {
+  border-left: 4px solid #5b8def;
+}
+
+.beginner-card.card-up {
+  border-left: 4px solid #e05555;
+}
+
+.beginner-card.card-down {
+  border-left: 4px solid #38a169;
+}
+
+.beginner-card-label {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.beginner-card-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.beginner-card-row .beginner-card-value {
+  font-size: 1.15rem;
+}
+
+.beginner-card-unit {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #a0aec0;
+  margin-left: 0.2rem;
+}
+
+.beginner-card-sub {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 0.2rem;
+}
+
+.beginner-tooltip {
+  border-bottom: 1px dashed #cbd5e0;
+  display: inline-block;
+  cursor: help;
+}
+
+/* ======= 警告 ======= */
+.beginner-warnings {
+  background: #fffcf0;
+  border: 1px solid #fbd38d;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+
+.beginner-warnings strong {
+  display: block;
+  color: #975a16;
+  margin-bottom: 0.3rem;
+}
+
+.beginner-warnings p {
+  color: #744210;
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+}
+
+/* ======= 圖表區 ======= */
+.beginner-chart-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.beginner-chart-section h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.beginner-legend-explain {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.close-dot {
+  background: #5b8def;
+}
+
+.ma5-dot {
+  background: #f0a020;
+}
+
+.ma20-dot {
+  background: #e05555;
+}
+
+/* ======= AI 分析 ======= */
+.beginner-analysis {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.beginner-analysis h2 {
+  font-size: 1rem;
+  margin: 0 0 0.6rem 0;
+  color: #2d3748;
+}
+
+.beginner-analysis-text {
+  line-height: 1.8;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.beginner-ai-badge {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.25rem 0.8rem;
+  background: #edf2f7;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+/* ======= 錯誤 ======= */
+.beginner-error {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.beginner-error-icon {
+  width: 36px;
+  height: 36px;
+  background: #fc8181;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.beginner-error strong {
+  display: block;
+  color: #c53030;
+  margin-bottom: 0.2rem;
+}
+
+.beginner-error p {
+  color: #9b2c2c;
+  font-size: 0.9rem;
+  margin: 0;
+}

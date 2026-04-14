@@ -1,0 +1,205 @@
+/* 樂齡版主題：大字體、高對比、溫暖色調、善用空間 */
+.elderly {
+  width: 100%;
+  padding: 2rem 2rem;
+  background: #fffdf7;
+  flex: 1;
+  color: #2c2c2c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Noto Sans TC", sans-serif;
+}
+
+.elderly h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 0.3rem;
+}
+
+.elderly h2 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin: 0 0 0.8rem 0;
+}
+
+/* 空狀態 */
+.elderly-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.elderly-empty p {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+/* ======= 雙欄佈局 ======= */
+.elderly-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .elderly-layout {
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .elderly-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .elderly {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* 左欄 */
+.elderly-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* 右欄 */
+.elderly-main {
+  min-width: 0;
+}
+
+/* ======= 價格卡片 ======= */
+.elderly-price-card {
+  text-align: center;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.elderly-stock-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.elderly-price {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.elderly-unit {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+
+.elderly-change {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+.elderly-change.up {
+  color: #d0021b;
+}
+
+.elderly-change.down {
+  color: #00a854;
+}
+
+/* ======= 均線卡片 ======= */
+.elderly-ma-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.elderly-ma-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.elderly-ma-label {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.elderly-ma-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.elderly-ma-explain {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+/* ======= 警告 ======= */
+.elderly-warnings {
+  background: #fff8e1;
+  border: 2px solid #ffc107;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+}
+
+.elderly-warnings p {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+  color: #7a5700;
+  line-height: 1.6;
+}
+
+/* ======= 圖表 ======= */
+.elderly-chart {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem 1.2rem;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ======= AI 分析 ======= */
+.elderly-analysis {
+  background: #f0f7ff;
+  border: 2px solid #b3d4fc;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.elderly-analysis p {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.elderly-disclaimer {
+  color: #888;
+  font-size: 1rem !important;
+  margin-top: 0.5rem;
+}
+
+/* ======= 錯誤 ======= */
+.elderly-error {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 1.2rem;
+  background: #fff0f0;
+  border: 2px solid #ffaaaa;
+  border-radius: 16px;
+  color: #cc0000;
+  max-width: 500px;
+  margin: 2rem auto;
+}

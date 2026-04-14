@@ -1,0 +1,205 @@
+/* App Shell - Tab 切換列 */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.theme-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: #fff;
+  border-bottom: 2px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.theme-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s;
+  gap: 0.15rem;
+}
+
+.theme-tab:hover {
+  background: #f7fafc;
+}
+
+.theme-tab.active {
+  background: #f7fafc;
+}
+
+.theme-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #5b8def;
+  border-radius: 3px 3px 0 0;
+}
+
+.tab-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.theme-tab.active .tab-label {
+  color: #2d3748;
+}
+
+.tab-desc {
+  font-size: 0.7rem;
+  color: #a0aec0;
+}
+
+/* ======= 共用搜尋列 ======= */
+.global-search {
+  position: sticky;
+  top: 52px; /* Tab 列高度下方 */
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.global-search-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 520px;
+}
+
+.search-hint {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+}
+
+.global-search input {
+  flex: 1;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  min-width: 0;
+}
+
+.global-search button {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.global-search button:disabled {
+  cursor: not-allowed;
+}
+
+/* --- Light 模式（入門版 / 樂齡版） --- */
+.search-bar-light {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.search-bar-light .search-hint {
+  color: #718096;
+}
+
+.search-bar-light input {
+  border: 1.5px solid #e2e8f0;
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+.search-bar-light input:focus {
+  border-color: #5b8def;
+  background: #fff;
+}
+
+.search-bar-light button {
+  background: #5b8def;
+  color: #fff;
+}
+
+.search-bar-light button:hover:not(:disabled) {
+  background: #4a7cd8;
+}
+
+.search-bar-light button:disabled {
+  background: #cbd5e0;
+  color: #fff;
+}
+
+/* --- Dark 模式（專業版） --- */
+.search-bar-dark {
+  background: #1a1d24;
+  border-bottom: 1px solid #2a2d35;
+}
+
+.search-bar-dark .search-hint {
+  color: #6a6f7a;
+}
+
+.search-bar-dark input {
+  border: 1px solid #3a3d45;
+  background: #0d0f12;
+  color: #e0e0e0;
+  font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
+  letter-spacing: 1px;
+}
+
+.search-bar-dark input:focus {
+  border-color: #4dabf7;
+}
+
+.search-bar-dark button {
+  background: #4dabf7;
+  color: #0d0f12;
+  font-weight: 700;
+  font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
+}
+
+.search-bar-dark button:hover:not(:disabled) {
+  background: #74c0fc;
+}
+
+.search-bar-dark button:disabled {
+  background: #3a3d45;
+  color: #666;
+}
+
+/* --- 手機版搜尋列 --- */
+@media (max-width: 768px) {
+  .global-search-inner {
+    max-width: 100%;
+  }
+
+  .search-hint {
+    display: none;
+  }
+}
+
+.theme-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,69 @@
+# ===== Node / Frontend =====
+node_modules/
+frontend/node_modules/
+tests/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+**/coverage/
+*.tsbuildinfo
+.eslintcache
+*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== Python / Backend =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.pytest_cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+env/
+
+# ===== Playwright / 測試產物 =====
+tests/test-results/
+tests/playwright-report/
+tests/playwright/.cache/
+
+# ===== 環境變數與密鑰 =====
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ===== IDE / OS =====
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Merge 衝突殘留 =====
+*.bak
+*.orig
+*.rej
+
+# ===== Claude Code 本地設定 =====
+.claude/settings.local.json
+
+# ===== 你目錄裡的暫存檔 =====
+2026-*-*.txt
+verify.json
+
+# ===== 測驗題目原文（不外流）=====
+/requirements.txt
