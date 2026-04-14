@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { fetchStock } from "./api";
 import type { StockResponse } from "./types";
-import ElderlyTheme from "./themes/ElderlyTheme";
-import ProTraderTheme from "./themes/ProTraderTheme";
-import BeginnerTheme from "./themes/BeginnerTheme";
 import "./App.css";
+
+const ElderlyTheme = lazy(() => import("./themes/ElderlyTheme"));
+const ProTraderTheme = lazy(() => import("./themes/ProTraderTheme"));
+const BeginnerTheme = lazy(() => import("./themes/BeginnerTheme"));
 
 type ThemeKey = "beginner" | "pro" | "elderly";
 
@@ -86,9 +87,11 @@ function App() {
 
       {/* 主題內容 */}
       <div className="theme-content">
-        {theme === "elderly" && <ElderlyTheme {...themeProps} />}
-        {theme === "pro" && <ProTraderTheme {...themeProps} />}
-        {theme === "beginner" && <BeginnerTheme {...themeProps} />}
+        <Suspense fallback={<div className="theme-loading">載入中...</div>}>
+          {theme === "elderly" && <ElderlyTheme {...themeProps} />}
+          {theme === "pro" && <ProTraderTheme {...themeProps} />}
+          {theme === "beginner" && <BeginnerTheme {...themeProps} />}
+        </Suspense>
       </div>
     </div>
   );
