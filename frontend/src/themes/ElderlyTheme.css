@@ -2,7 +2,7 @@
 .elderly {
   width: 100%;
   padding: 2rem 2rem;
-  background: #fffdf7;
+  background: var(--color-bg);
   flex: 1;
   color: #2c2c2c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -12,13 +12,13 @@
 .elderly h1 {
   font-size: 2.4rem;
   text-align: center;
-  color: #1a1a1a;
+  color: var(--color-text);
   margin-bottom: 0.3rem;
 }
 
 .elderly h2 {
   font-size: 1.5rem;
-  color: #1a1a1a;
+  color: var(--color-text);
   margin: 0 0 0.8rem 0;
 }
 
@@ -30,7 +30,7 @@
 
 .elderly-empty p {
   font-size: 1.3rem;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 /* ======= 雙欄佈局 ======= */
@@ -73,8 +73,8 @@
 /* ======= 價格卡片 ======= */
 .elderly-price-card {
   text-align: center;
-  background: #fff;
-  border: 2px solid #e0e0e0;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
   border-radius: 20px;
   padding: 2rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -90,13 +90,13 @@
 .elderly-price {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
   line-height: 1.2;
 }
 
 .elderly-unit {
   font-size: 1.1rem;
-  color: #888;
+  color: var(--color-text-subtle);
   margin-bottom: 0.4rem;
 }
 
@@ -107,11 +107,11 @@
 }
 
 .elderly-change.up {
-  color: #d0021b;
+  color: var(--color-up);
 }
 
 .elderly-change.down {
-  color: #00a854;
+  color: var(--color-down);
 }
 
 /* ======= 均線卡片 ======= */
@@ -122,8 +122,8 @@
 }
 
 .elderly-ma-card {
-  background: #fff;
-  border: 2px solid #e0e0e0;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
   border-radius: 16px;
   padding: 1.2rem;
   text-align: center;
@@ -131,7 +131,7 @@
 
 .elderly-ma-label {
   font-size: 1rem;
-  color: #888;
+  color: var(--color-text-subtle);
   margin-bottom: 0.3rem;
   font-weight: 500;
 }
@@ -139,19 +139,19 @@
 .elderly-ma-value {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .elderly-ma-explain {
   font-size: 0.85rem;
-  color: #aaa;
+  color: var(--color-text-disabled);
   margin-top: 0.3rem;
 }
 
 /* ======= 警告 ======= */
 .elderly-warnings {
-  background: #fff8e1;
-  border: 2px solid #ffc107;
+  background: var(--color-warn-bg);
+  border: 2px solid var(--color-warn-border);
   border-radius: 16px;
   padding: 1rem 1.5rem;
 }
@@ -159,23 +159,23 @@
 .elderly-warnings p {
   font-size: 1.1rem;
   margin: 0.3rem 0;
-  color: #7a5700;
+  color: var(--color-warn-text);
   line-height: 1.6;
 }
 
 /* ======= 圖表 ======= */
 .elderly-chart {
-  background: #fff;
+  background: var(--color-surface);
   border-radius: 20px;
   padding: 1.5rem 1.2rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--color-border);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 /* ======= AI 分析 ======= */
 .elderly-analysis {
-  background: #f0f7ff;
-  border: 2px solid #b3d4fc;
+  background: var(--color-info-bg);
+  border: 2px solid var(--color-info-border);
   border-radius: 20px;
   padding: 1.5rem;
 }
@@ -186,7 +186,7 @@
 }
 
 .elderly-disclaimer {
-  color: #888;
+  color: var(--color-text-subtle);
   font-size: 1rem !important;
   margin-top: 0.5rem;
 }
@@ -196,10 +196,10 @@
   text-align: center;
   font-size: 1.3rem;
   padding: 1.2rem;
-  background: #fff0f0;
-  border: 2px solid #ffaaaa;
+  background: var(--color-danger-bg);
+  border: 2px solid var(--color-danger-border);
   border-radius: 16px;
-  color: #cc0000;
+  color: var(--color-danger-text);
   max-width: 500px;
   margin: 2rem auto;
 }
