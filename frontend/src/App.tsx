@@ -46,11 +46,8 @@ function App() {
 
   const themeProps = { result, error, loading };
 
-  // 搜尋列根據主題微調樣式
-  const searchThemeClass = theme === "pro" ? "search-bar-dark" : "search-bar-light";
-
   return (
-    <div className="app-shell">
+    <div className="app-shell" data-theme={theme}>
       {/* Tab 切換列 */}
       <nav className="theme-tabs">
         {THEMES.map((t) => (
@@ -66,7 +63,7 @@ function App() {
       </nav>
 
       {/* 共用搜尋列 */}
-      <div className={`global-search ${searchThemeClass}`}>
+      <div className="global-search">
         <div className="global-search-inner">
           {!result && !error && (
             <span className="search-hint">輸入台股代號查詢走勢</span>

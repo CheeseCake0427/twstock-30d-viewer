@@ -76,7 +76,8 @@
 /*
  * 股票小白：淺色、友善、柔和藍
  */
-.beginner {
+.beginner,
+[data-theme="beginner"] {
   --color-bg: #fafbfe;
   --color-surface: #ffffff;
   --color-surface-alt: #f7fafc;
@@ -109,7 +110,8 @@
 /*
  * 資深操作師：深色、終端機風、資訊密集
  */
-.pro {
+.pro,
+[data-theme="pro"] {
   --color-bg: #14161a;
   --color-surface: #1a1d24;
   --color-surface-alt: #0d0f12;
@@ -142,7 +144,8 @@
 /*
  * 樂齡版：大字、高對比、暖色
  */
-.elderly {
+.elderly,
+[data-theme="elderly"] {
   --color-bg: #fffdf7;
   --color-surface: #ffffff;
   --color-surface-alt: #f0f7ff;
@@ -153,6 +156,7 @@
   --color-border: #e0e0e0;
 
   --color-primary: #1a1a1a;
+  --color-primary-hover: #333333;
   --color-primary-contrast: #ffffff;
 
   --color-up: #d0021b;
