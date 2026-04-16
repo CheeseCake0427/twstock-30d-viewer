@@ -220,6 +220,17 @@
   background: rgba(77, 171, 247, 0.06);
 }
 
+/* 手機橫向捲動：避免 30 天資料在窄螢幕被壓扁（Pro 靠原生慣性滑動作為提示） */
+@media (max-width: 600px) {
+  .pro-chart-scroll {
+    overflow-x: auto;
+  }
+
+  .pro-chart-inner {
+    min-width: 640px;
+  }
+}
+
 /* 錯誤 */
 .pro-error {
   padding: 0.5rem 1rem;

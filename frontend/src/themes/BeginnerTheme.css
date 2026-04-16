@@ -207,6 +207,37 @@
   background: #e05555;
 }
 
+/* 手機橫向捲動：新手需要看清每一天，右緣漸層做為「可滑動」的視覺提示 */
+@media (max-width: 600px) {
+  .beginner-chart-scroll-frame {
+    position: relative;
+  }
+
+  .beginner-chart-scroll {
+    overflow-x: auto;
+  }
+
+  .beginner-chart-inner {
+    min-width: 640px;
+  }
+
+  /* 右緣漸層：提示還有內容可往右滑 */
+  .beginner-chart-scroll-frame::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-surface) 85%
+    );
+    pointer-events: none;
+  }
+}
+
 /* ======= AI 分析 ======= */
 .beginner-analysis {
   background: var(--color-surface);
