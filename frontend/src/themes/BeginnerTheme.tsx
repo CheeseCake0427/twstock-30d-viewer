@@ -152,67 +152,77 @@ function BeginnerChart({ data }: { data: StockDayData[] }) {
   }));
 
   return (
-    <ResponsiveContainer width="100%" height={420}>
-      <LineChart data={chartData}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
-        <XAxis
-          dataKey="date"
-          tick={{ fontSize: 12, fill: "#888" }}
-          interval={3}
-        />
-        <YAxis
-          domain={[min, max]}
-          tick={{ fontSize: 12, fill: "#888" }}
-          width={70}
-        />
-        <Tooltip
-          contentStyle={{
-            borderRadius: 8,
-            fontSize: 13,
-            border: "1px solid #e0e0e0",
-          }}
-          formatter={(v, name) => [
-            `${typeof v === "number" ? v.toFixed(2) : "—"} 元`,
-            name === "close"
-              ? "收盤價"
-              : name === "ma5"
-                ? "5日均線"
-                : "20日均線",
-          ]}
-          labelFormatter={(l) => `${l}`}
-        />
-        <Legend
-          formatter={(v) =>
-            v === "close" ? "收盤價" : v === "ma5" ? "MA5 均線" : "MA20 均線"
-          }
-        />
-        <Line
-          type="monotone"
-          dataKey="close"
-          stroke="#5b8def"
-          strokeWidth={2.5}
-          dot={{ r: 2.5, fill: "#5b8def" }}
-          activeDot={{ r: 5 }}
-        />
-        <Line
-          type="monotone"
-          dataKey="ma5"
-          stroke="#f0a020"
-          strokeWidth={2}
-          strokeDasharray="6 3"
-          dot={false}
-          connectNulls={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="ma20"
-          stroke="#e05555"
-          strokeWidth={2}
-          strokeDasharray="6 3"
-          dot={false}
-          connectNulls={false}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="beginner-chart-scroll-frame">
+      <div className="beginner-chart-scroll">
+        <div className="beginner-chart-inner">
+          <ResponsiveContainer width="100%" height={420}>
+            <LineChart data={chartData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
+              <XAxis
+                dataKey="date"
+                tick={{ fontSize: 12, fill: "#888" }}
+                interval={3}
+              />
+              <YAxis
+                domain={[min, max]}
+                tick={{ fontSize: 12, fill: "#888" }}
+                width={70}
+              />
+              <Tooltip
+                contentStyle={{
+                  borderRadius: 8,
+                  fontSize: 13,
+                  border: "1px solid #e0e0e0",
+                }}
+                formatter={(v, name) => [
+                  `${typeof v === "number" ? v.toFixed(2) : "—"} 元`,
+                  name === "close"
+                    ? "收盤價"
+                    : name === "ma5"
+                      ? "5日均線"
+                      : "20日均線",
+                ]}
+                labelFormatter={(l) => `${l}`}
+              />
+              <Legend
+                formatter={(v) =>
+                  v === "close"
+                    ? "收盤價"
+                    : v === "ma5"
+                      ? "MA5 均線"
+                      : "MA20 均線"
+                }
+              />
+              <Line
+                type="monotone"
+                dataKey="close"
+                stroke="#5b8def"
+                strokeWidth={2.5}
+                dot={{ r: 2.5, fill: "#5b8def" }}
+                activeDot={{ r: 5 }}
+              />
+              <Line
+                type="monotone"
+                dataKey="ma5"
+                stroke="#f0a020"
+                strokeWidth={2}
+                strokeDasharray="6 3"
+                dot={false}
+                connectNulls={false}
+              />
+              <Line
+                type="monotone"
+                dataKey="ma20"
+                stroke="#e05555"
+                strokeWidth={2}
+                strokeDasharray="6 3"
+                dot={false}
+                connectNulls={false}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
   );
 }

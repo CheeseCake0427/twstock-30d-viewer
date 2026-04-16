@@ -140,71 +140,79 @@ function ProChart({ data }: { data: StockDayData[] }) {
   }));
 
   return (
-    <ResponsiveContainer width="100%" height={380}>
-      <LineChart data={chartData}>
-        <CartesianGrid strokeDasharray="2 2" stroke="#2a2d35" />
-        <XAxis
-          dataKey="date"
-          tick={{ fill: "#8a8f98", fontSize: 11 }}
-          axisLine={{ stroke: "#2a2d35" }}
-          interval={2}
-        />
-        <YAxis
-          domain={[min, max]}
-          tick={{ fill: "#8a8f98", fontSize: 11 }}
-          axisLine={{ stroke: "#2a2d35" }}
-          width={70}
-        />
-        <ReferenceLine
-          y={Math.round(avg)}
-          stroke="#444"
-          strokeDasharray="3 3"
-          label={{ value: `AVG ${Math.round(avg)}`, fill: "#666", fontSize: 10 }}
-        />
-        <Tooltip
-          contentStyle={{
-            background: "#1e2028",
-            border: "1px solid #3a3d45",
-            borderRadius: 4,
-            fontSize: 12,
-          }}
-          itemStyle={{ color: "#ccc" }}
-          labelStyle={{ color: "#fff" }}
-          formatter={(v, name) => [
-            typeof v === "number" ? v.toFixed(2) : "—",
-            name === "close" ? "Close" : String(name).toUpperCase(),
-          ]}
-        />
-        <Legend
-          wrapperStyle={{ fontSize: 11, color: "#8a8f98" }}
-          formatter={(v) => (v === "close" ? "CLOSE" : v.toUpperCase())}
-        />
-        <Line
-          type="monotone"
-          dataKey="close"
-          stroke="#4dabf7"
-          strokeWidth={1.5}
-          dot={false}
-          activeDot={{ r: 3, fill: "#4dabf7" }}
-        />
-        <Line
-          type="monotone"
-          dataKey="ma5"
-          stroke="#ffd43b"
-          strokeWidth={1}
-          dot={false}
-          connectNulls={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="ma20"
-          stroke="#ff6b6b"
-          strokeWidth={1}
-          dot={false}
-          connectNulls={false}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="pro-chart-scroll">
+      <div className="pro-chart-inner">
+        <ResponsiveContainer width="100%" height={380}>
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="2 2" stroke="#2a2d35" />
+            <XAxis
+              dataKey="date"
+              tick={{ fill: "#8a8f98", fontSize: 11 }}
+              axisLine={{ stroke: "#2a2d35" }}
+              interval={2}
+            />
+            <YAxis
+              domain={[min, max]}
+              tick={{ fill: "#8a8f98", fontSize: 11 }}
+              axisLine={{ stroke: "#2a2d35" }}
+              width={70}
+            />
+            <ReferenceLine
+              y={Math.round(avg)}
+              stroke="#444"
+              strokeDasharray="3 3"
+              label={{
+                value: `AVG ${Math.round(avg)}`,
+                fill: "#666",
+                fontSize: 10,
+              }}
+            />
+            <Tooltip
+              contentStyle={{
+                background: "#1e2028",
+                border: "1px solid #3a3d45",
+                borderRadius: 4,
+                fontSize: 12,
+              }}
+              itemStyle={{ color: "#ccc" }}
+              labelStyle={{ color: "#fff" }}
+              formatter={(v, name) => [
+                typeof v === "number" ? v.toFixed(2) : "—",
+                name === "close" ? "Close" : String(name).toUpperCase(),
+              ]}
+            />
+            <Legend
+              wrapperStyle={{ fontSize: 11, color: "#8a8f98" }}
+              formatter={(v) => (v === "close" ? "CLOSE" : v.toUpperCase())}
+            />
+            <Line
+              type="monotone"
+              dataKey="close"
+              stroke="#4dabf7"
+              strokeWidth={1.5}
+              dot={false}
+              activeDot={{ r: 3, fill: "#4dabf7" }}
+            />
+            <Line
+              type="monotone"
+              dataKey="ma5"
+              stroke="#ffd43b"
+              strokeWidth={1}
+              dot={false}
+              connectNulls={false}
+            />
+            <Line
+              type="monotone"
+              dataKey="ma20"
+              stroke="#ff6b6b"
+              strokeWidth={1}
+              dot={false}
+              connectNulls={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
   );
 }
 
