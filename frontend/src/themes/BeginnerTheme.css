@@ -1,7 +1,7 @@
 /* 股票小白主題：友善、清爽、善用空間、響應式 */
 .beginner {
   width: 100%;
-  padding: 2rem 2rem;
+  padding: var(--space-8);
   background: var(--color-bg);
   flex: 1;
   color: #333;
@@ -11,7 +11,7 @@
 
 .beginner-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-8);
 }
 
 .beginner-header h1 {
@@ -22,7 +22,7 @@
 
 .beginner-header p {
   color: var(--color-text-muted);
-  font-size: 1rem;
+  font-size: var(--fs-base);
 }
 
 /* 空狀態引導 */
@@ -34,7 +34,7 @@
 .beginner-empty h2 {
   font-size: 1.4rem;
   color: var(--color-text);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--space-2) 0;
 }
 
 .beginner-empty p {
@@ -52,14 +52,14 @@
 .beginner-layout {
   display: grid;
   grid-template-columns: 340px 1fr;
-  gap: 1.5rem;
+  gap: var(--space-6);
   align-items: start;
 }
 
 @media (max-width: 1024px) {
   .beginner-layout {
     grid-template-columns: 300px 1fr;
-    gap: 1rem;
+    gap: var(--space-4);
   }
 }
 
@@ -73,7 +73,7 @@
 .beginner-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 /* MA5/MA20 兩張卡片並排 */
@@ -113,12 +113,12 @@
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin-bottom: 0.3rem;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .beginner-card-value {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
   color: var(--color-text);
 }
 
@@ -128,13 +128,13 @@
 
 .beginner-card-unit {
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   color: var(--color-text-subtle);
   margin-left: 0.2rem;
 }
 
 .beginner-card-sub {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--color-text-subtle);
   margin-top: 0.2rem;
 }
@@ -149,8 +149,8 @@
 .beginner-warnings {
   background: var(--color-warn-bg);
   border: 1px solid var(--color-warn-border);
-  border-radius: 12px;
-  padding: 1rem 1.2rem;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) 1.2rem;
 }
 
 .beginner-warnings strong {
@@ -168,21 +168,21 @@
 /* ======= 圖表區 ======= */
 .beginner-chart-section {
   background: var(--color-surface);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
 }
 
 .beginner-chart-section h2 {
   font-size: 1.1rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--space-2) 0;
   color: var(--color-text);
 }
 
 .beginner-legend-explain {
   font-size: 0.8rem;
   color: var(--color-text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
   line-height: 1.8;
 }
 
@@ -196,15 +196,15 @@
 }
 
 .close-dot {
-  background: #5b8def;
+  background: var(--chart-price);
 }
 
 .ma5-dot {
-  background: #f0a020;
+  background: var(--chart-ma5);
 }
 
 .ma20-dot {
-  background: #e05555;
+  background: var(--chart-ma20);
 }
 
 /* 手機橫向捲動：新手需要看清每一天，右緣漸層做為「可滑動」的視覺提示 */
@@ -241,14 +241,14 @@
 /* ======= AI 分析 ======= */
 .beginner-analysis {
   background: var(--color-surface);
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   padding: 1.2rem;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--color-border);
 }
 
 .beginner-analysis h2 {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   margin: 0 0 0.6rem 0;
   color: var(--color-text);
 }
@@ -265,7 +265,7 @@
   padding: 0.25rem 0.8rem;
   background: #edf2f7;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--color-text-subtle);
 }
 
@@ -273,12 +273,12 @@
 .beginner-error {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
   background: var(--color-danger-bg);
   border: 1px solid var(--color-danger-border);
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -293,7 +293,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: 1.2rem;
   flex-shrink: 0;
 }

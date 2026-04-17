@@ -6,8 +6,8 @@
  * 未來若要與 tokens.css 真正統一，做法是導入 `useChartColors` hook
  * 用 `getComputedStyle` 在 runtime 讀取——屬於後續 token 對齊 PR 範疇。
  *
- * 注意：Beginner 主題的 `.close-dot` / `.ma5-dot` / `.ma20-dot`（見
- * BeginnerTheme.css）目前仍硬編碼對應顏色，改色時記得兩邊同步。
+ * 注意：tokens.css 同步定義了 --chart-price / --chart-ma5 / --chart-ma20
+ * 供 CSS 使用（如 Beginner legend dots）。改色時兩邊須同步。
  */
 
 export type ChartColors = {
