@@ -11,6 +11,7 @@ import {
 import type { ThemeProps } from "./types";
 import type { StockDayData } from "../types";
 import Warnings from "../components/Warnings";
+import { elderlyChartColors as c } from "./chartColors";
 import "./ElderlyTheme.css";
 
 export default function ElderlyTheme({
@@ -132,7 +133,7 @@ function ElderlyChart({ data }: { data: StockDayData[] }) {
   return (
     <ResponsiveContainer width="100%" height={420}>
       <LineChart data={chartData}>
-        <CartesianGrid strokeDasharray="4 4" stroke="#ddd" />
+        <CartesianGrid strokeDasharray="4 4" stroke={c.grid} />
         <XAxis dataKey="date" tick={{ fontSize: 16 }} interval={4} />
         <YAxis domain={[min, max]} tick={{ fontSize: 16 }} width={80} />
         <Tooltip
@@ -152,14 +153,14 @@ function ElderlyChart({ data }: { data: StockDayData[] }) {
         <Line
           type="monotone"
           dataKey="close"
-          stroke="#0066cc"
+          stroke={c.price}
           strokeWidth={3}
           dot={{ r: 3 }}
         />
         <Line
           type="monotone"
           dataKey="ma5"
-          stroke="#e68a00"
+          stroke={c.ma5}
           strokeWidth={2.5}
           dot={false}
           connectNulls={false}
@@ -167,7 +168,7 @@ function ElderlyChart({ data }: { data: StockDayData[] }) {
         <Line
           type="monotone"
           dataKey="ma20"
-          stroke="#cc0000"
+          stroke={c.ma20}
           strokeWidth={2.5}
           dot={false}
           connectNulls={false}
