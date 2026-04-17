@@ -105,6 +105,11 @@
   --color-danger-accent: #fc8181;
   --color-danger-text: #c53030;
   --color-danger-text-strong: #9b2c2c;
+
+  /* chart line colors — 須與 chartColors.ts 同步 */
+  --chart-price: #5b8def;
+  --chart-ma5: #f0a020;
+  --chart-ma20: #e05555;
 }
 
 /*
@@ -139,6 +144,11 @@
 
   --color-danger-border: #5c1a1a;
   --color-danger-text: #ff6b6b;
+
+  /* chart line colors — 須與 chartColors.ts 同步 */
+  --chart-price: #4dabf7;
+  --chart-ma5: #ffd43b;
+  --chart-ma20: #ff6b6b;
 }
 
 /*
@@ -172,4 +182,9 @@
   --color-danger-bg: #fff0f0;
   --color-danger-border: #ffaaaa;
   --color-danger-text: #cc0000;
+
+  /* chart line colors — 須與 chartColors.ts 同步 */
+  --chart-price: #0066cc;
+  --chart-ma5: #e68a00;
+  --chart-ma20: #cc0000;
 }
