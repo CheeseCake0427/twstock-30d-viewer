@@ -269,6 +269,96 @@
   color: var(--color-text-subtle);
 }
 
+/* ======= 名詞小教室 ======= */
+.beginner-glossary {
+  margin-top: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+}
+
+.beginner-glossary-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.8rem 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  font-family: inherit;
+  text-align: left;
+}
+
+.beginner-glossary-toggle:hover {
+  background: var(--color-surface-alt);
+}
+
+.beginner-glossary-icon {
+  font-size: 1.1rem;
+}
+
+.beginner-glossary-arrow {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+  transition: transform var(--transition-fast);
+}
+
+.beginner-glossary-arrow.open {
+  transform: rotate(180deg);
+}
+
+.beginner-glossary-list {
+  margin: 0;
+  padding: 0 1.2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+}
+
+.beginner-glossary-item {
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.beginner-glossary-item dt {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  margin-bottom: 0.3rem;
+}
+
+.beginner-glossary-item dd {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  word-break: break-word;
+}
+
+/* 手機版：名詞小教室改單欄 + 縮 padding */
+@media (max-width: 768px) {
+  .beginner-glossary {
+    margin-top: var(--space-4);
+  }
+
+  .beginner-glossary-list {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 0.8rem;
+  }
+
+  .beginner-glossary-toggle {
+    padding: 0.8rem 1rem;
+  }
+}
+
 /* ======= 錯誤 ======= */
 .beginner-error {
   display: flex;

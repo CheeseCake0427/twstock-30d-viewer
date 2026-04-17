@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   LineChart,
   Line,
@@ -117,9 +118,10 @@ export default function BeginnerTheme({
                 <div className="beginner-ai-badge">AI 生成內容，僅供參考</div>
               </div>
             )}
+
           </div>
 
-          {/* 右欄：圖表 */}
+          {/* 右欄：圖表 + 名詞小教室 */}
           <div className="beginner-main">
             <div className="beginner-chart-section">
               <h2>股價走勢圖</h2>
@@ -133,8 +135,68 @@ export default function BeginnerTheme({
               </div>
               <BeginnerChart data={data} />
             </div>
+
+            {/* 名詞小教室 */}
+            <Glossary />
           </div>
         </div>
+      )}
+    </div>
+  );
+}
+
+const glossaryItems = [
+  {
+    term: "股票代號",
+    desc: "每檔股票在交易所的編號，例如 2330 是台積電。上市股票通常是 4 碼數字，0050 這類是 ETF。輸入代號就能查到對應的公司。",
+  },
+  {
+    term: "收盤價",
+    desc: "當天股市收盤（下午 1:30）時最後的成交價格。因為股價隨時在變，收盤價是大家最常拿來比較「今天漲還是跌」的基準。",
+  },
+  {
+    term: "漲 / 跌（紅與綠）",
+    desc: "台股慣例：紅色代表上漲、綠色代表下跌，跟歐美股市剛好相反。畫面上看到紅色表示價格比之前高，綠色表示變低了。",
+  },
+  {
+    term: "均線（MA5 / MA20）",
+    desc: "把最近幾天的收盤價加起來除以天數，就是「移動平均線」。MA5 是最近 5 天的平均，反映短期趨勢；MA20 是 20 天的平均，反映中期趨勢。當短期均線往上穿過長期均線，通常被認為是上漲訊號，反之則是下跌訊號。",
+  },
+  {
+    term: "走勢圖怎麼看",
+    desc: "橫軸是日期、縱軸是價格。藍色實線是每天的收盤價，虛線是均線。線往右上走代表最近在漲，往右下走代表在跌。把滑鼠移到線上可以看到當天的數字。",
+  },
+  {
+    term: "ETF",
+    desc: "一種可以像股票一樣買賣的基金，一次買進一籃子股票。例如 0050 包含台灣市值最大的 50 家公司，適合不想挑個股的新手分散風險。",
+  },
+];
+
+function Glossary() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="beginner-glossary">
+      <button
+        className="beginner-glossary-toggle"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        <span className="beginner-glossary-icon">📖</span>
+        名詞小教室
+        <span className={`beginner-glossary-arrow ${open ? "open" : ""}`}>
+          ▾
+        </span>
+      </button>
+      {open && (
+        <dl className="beginner-glossary-list">
+          {glossaryItems.map((item) => (
+            <div className="beginner-glossary-item" key={item.term}>
+              <dt>{item.term}</dt>
+              <dd>{item.desc}</dd>
+            </div>
+          ))}
+        </dl>
       )}
     </div>
   );
