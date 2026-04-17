@@ -12,6 +12,7 @@ import {
 import type { ThemeProps } from "./types";
 import type { StockDayData } from "../types";
 import Warnings from "../components/Warnings";
+import { proChartColors as c } from "./chartColors";
 import "./ProTraderTheme.css";
 
 export default function ProTraderTheme({
@@ -144,59 +145,59 @@ function ProChart({ data }: { data: StockDayData[] }) {
       <div className="pro-chart-inner">
         <ResponsiveContainer width="100%" height={380}>
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="2 2" stroke="#2a2d35" />
+            <CartesianGrid strokeDasharray="2 2" stroke={c.grid} />
             <XAxis
               dataKey="date"
-              tick={{ fill: "#8a8f98", fontSize: 11 }}
-              axisLine={{ stroke: "#2a2d35" }}
+              tick={{ fill: c.axisText, fontSize: 11 }}
+              axisLine={{ stroke: c.axisLine }}
               interval={2}
             />
             <YAxis
               domain={[min, max]}
-              tick={{ fill: "#8a8f98", fontSize: 11 }}
-              axisLine={{ stroke: "#2a2d35" }}
+              tick={{ fill: c.axisText, fontSize: 11 }}
+              axisLine={{ stroke: c.axisLine }}
               width={70}
             />
             <ReferenceLine
               y={Math.round(avg)}
-              stroke="#444"
+              stroke={c.referenceLine}
               strokeDasharray="3 3"
               label={{
                 value: `AVG ${Math.round(avg)}`,
-                fill: "#666",
+                fill: c.referenceLabel,
                 fontSize: 10,
               }}
             />
             <Tooltip
               contentStyle={{
-                background: "#1e2028",
-                border: "1px solid #3a3d45",
+                background: c.tooltipBg,
+                border: `1px solid ${c.tooltipBorder}`,
                 borderRadius: 4,
                 fontSize: 12,
               }}
-              itemStyle={{ color: "#ccc" }}
-              labelStyle={{ color: "#fff" }}
+              itemStyle={{ color: c.tooltipText }}
+              labelStyle={{ color: c.tooltipLabel }}
               formatter={(v, name) => [
                 typeof v === "number" ? v.toFixed(2) : "—",
                 name === "close" ? "Close" : String(name).toUpperCase(),
               ]}
             />
             <Legend
-              wrapperStyle={{ fontSize: 11, color: "#8a8f98" }}
+              wrapperStyle={{ fontSize: 11, color: c.legendText }}
               formatter={(v) => (v === "close" ? "CLOSE" : v.toUpperCase())}
             />
             <Line
               type="monotone"
               dataKey="close"
-              stroke="#4dabf7"
+              stroke={c.price}
               strokeWidth={1.5}
               dot={false}
-              activeDot={{ r: 3, fill: "#4dabf7" }}
+              activeDot={{ r: 3, fill: c.price }}
             />
             <Line
               type="monotone"
               dataKey="ma5"
-              stroke="#ffd43b"
+              stroke={c.ma5}
               strokeWidth={1}
               dot={false}
               connectNulls={false}
@@ -204,7 +205,7 @@ function ProChart({ data }: { data: StockDayData[] }) {
             <Line
               type="monotone"
               dataKey="ma20"
-              stroke="#ff6b6b"
+              stroke={c.ma20}
               strokeWidth={1}
               dot={false}
               connectNulls={false}

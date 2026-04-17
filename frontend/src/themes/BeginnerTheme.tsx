@@ -11,6 +11,7 @@ import {
 import type { ThemeProps } from "./types";
 import type { StockDayData } from "../types";
 import Warnings from "../components/Warnings";
+import { beginnerChartColors as c } from "./chartColors";
 import "./BeginnerTheme.css";
 
 export default function BeginnerTheme({
@@ -157,22 +158,22 @@ function BeginnerChart({ data }: { data: StockDayData[] }) {
         <div className="beginner-chart-inner">
           <ResponsiveContainer width="100%" height={420}>
             <LineChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
+              <CartesianGrid strokeDasharray="3 3" stroke={c.grid} />
               <XAxis
                 dataKey="date"
-                tick={{ fontSize: 12, fill: "#888" }}
+                tick={{ fontSize: 12, fill: c.axisText }}
                 interval={3}
               />
               <YAxis
                 domain={[min, max]}
-                tick={{ fontSize: 12, fill: "#888" }}
+                tick={{ fontSize: 12, fill: c.axisText }}
                 width={70}
               />
               <Tooltip
                 contentStyle={{
                   borderRadius: 8,
                   fontSize: 13,
-                  border: "1px solid #e0e0e0",
+                  border: `1px solid ${c.tooltipBorder}`,
                 }}
                 formatter={(v, name) => [
                   `${typeof v === "number" ? v.toFixed(2) : "—"} 元`,
@@ -196,15 +197,15 @@ function BeginnerChart({ data }: { data: StockDayData[] }) {
               <Line
                 type="monotone"
                 dataKey="close"
-                stroke="#5b8def"
+                stroke={c.price}
                 strokeWidth={2.5}
-                dot={{ r: 2.5, fill: "#5b8def" }}
+                dot={{ r: 2.5, fill: c.price }}
                 activeDot={{ r: 5 }}
               />
               <Line
                 type="monotone"
                 dataKey="ma5"
-                stroke="#f0a020"
+                stroke={c.ma5}
                 strokeWidth={2}
                 strokeDasharray="6 3"
                 dot={false}
@@ -213,7 +214,7 @@ function BeginnerChart({ data }: { data: StockDayData[] }) {
               <Line
                 type="monotone"
                 dataKey="ma20"
-                stroke="#e05555"
+                stroke={c.ma20}
                 strokeWidth={2}
                 strokeDasharray="6 3"
                 dot={false}
